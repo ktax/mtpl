@@ -1,0 +1,25 @@
+@import '../../../variables.scss';
+
+:host(app-application) {
+  flex: 1 1 5%;
+  min-width: 25%;
+  display: inline-block;
+  box-sizing: border-box;
+  text-align: center;
+  padding: 40px 60px;
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (max-width: $page-content-width) {
+  :host(app-application) {
+    min-width: 33.333%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  :host(app-application) {
+    min-width: 50%;
+    padding: 40px 20px;
+  }
+}

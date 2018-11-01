@@ -1,0 +1,86 @@
+@import '../../../variables.scss';
+
+:host(app-checklist) {
+  display: block;
+  padding: 60px 0;
+  h2 {
+    text-align: center;
+    width: 100%;
+  }
+
+  .page-container {
+    width: 100%;
+    max-width: $page-content-width;
+    margin: 0 auto;
+    padding: 60px 0;
+
+    .list-item {
+      width: 45%;
+      float: left;
+      height: 50px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      &:nth-child(odd) {
+        margin-right: 5%;
+      }
+
+      i {
+        height: 50px;
+        font-size: 20px;
+        float: left;
+        line-height: 50px;
+        margin-right: 10px;
+        color: #787379;
+      }
+    }
+
+    .clearfix {
+      clear: both;
+    }
+
+    p {
+      display: block;
+      margin-top: 30px;
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  :host(app-checklist) {
+    .page-container {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }
+}
+
+@media screen and (max-width: 850px) {
+  :host(app-checklist) {
+    .page-container {
+      .list-item {
+        height: auto;
+        width: 100%;
+        padding-bottom: 10px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $mobile-breakpoint) {
+  :host(app-checklist) {
+    .page-container {
+      padding-left: $mobile-margin;
+      padding-right: $mobile-margin;
+      width: $mobile-page-content-width;
+
+      .list-item {
+        height: auto;
+        width: 100%;
+        padding-bottom: 10px;
+      }
+    }
+  }
+}

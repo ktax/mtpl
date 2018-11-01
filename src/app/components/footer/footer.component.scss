@@ -1,0 +1,31 @@
+@import '../../../variables.scss';
+
+:host(app-footer) {
+  display: block;
+  width: 100%;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.8);
+
+  .page-container {
+    width: 100%;
+    max-width: $page-content-width;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 15px 0;
+    .copyright {
+      align-self: flex-end;
+      font-size: 12px;
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  :host(app-footer) {
+    .page-container {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }
+}

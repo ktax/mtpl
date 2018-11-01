@@ -1,0 +1,57 @@
+@import '../../../variables.scss';
+
+:host(app-application-list) {
+  display: block;
+  position: relative;
+  background-image: url('/assets/img/Allard-Audiology-Clinic-Scarborough-ON.png');
+  background-position: right;
+  padding: 60px 0;
+  background-size: cover;
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  h2 {
+    color: #fff;
+    text-align: center;
+    width: 100%;
+  }
+
+  .page-container {
+    color: #fff;
+    position: relative;
+    width: 100%;
+    max-width: $page-content-width;
+    margin: 0 auto;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+
+    .grid {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+
+    i {
+      flex: none;
+      font-size: 70px;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+@media screen and (max-width: $mobile-breakpoint) {
+  .page-container {
+    padding-left: $mobile-margin;
+    padding-right: $mobile-margin;
+    width: $mobile-page-content-width;
+  }
+}

@@ -1,0 +1,38 @@
+@import '../../../variables.scss';
+
+:host(app-offer) {
+  display: block;
+  padding: 30px 0;
+  h2 {
+    flex: none;
+    width: 100%;
+    text-align: center;
+  }
+  .page-container {
+    width: 100%;
+    max-width: $page-content-width;
+    margin: 0 auto;
+  }
+
+  .meta {
+    font-size: 0.7em;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  :host(app-description-with-image) {
+    .page-container {
+      padding-left: 15px;
+      padding-right: 15px;
+      width: calc(100% - 30px);
+
+      app-image-half {
+        order: 1;
+      }
+
+      ::ng-deep app-description-half {
+        order: 2;
+      }
+    }
+  }
+}

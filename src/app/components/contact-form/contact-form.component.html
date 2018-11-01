@@ -1,0 +1,50 @@
+<div class="page-container">
+  <div class="row space-around">
+    <div class="item">
+      <i class="fas fa-envelope"></i>
+      <span>kontakt@mobilna-tympanometria.pl</span>
+    </div>
+    <div class="item">
+      <i class="fas fa-map-marker-alt"></i>
+      <span>Gliwice / Zabrze / Ruda Śląska / Bytom / Tarnowskie Góry / Knurów / Chorzów</span>
+    </div>
+    <div class="item">
+      <i class="fas fa-phone"></i>
+      <span>+48 790 635 415</span>
+    </div>
+  </div>
+  <div class="row big-margin">
+    <p>Kontakt telefoniczny lub mailowy z naszym specjalistą w godzinach 8:00-20:00 przez cały tydzień w celu ustalenia
+      wszystkich szczegółów. Dojazd do pacjentów na terenie śląska (do wszystkich miast ościennych w obrębie 25 km od
+      Zabrza)</p>
+  </div>
+  <form [formGroup]="form">
+    <div class="row">
+      <div class="form-group" [class.error]="hasError('name')">
+        <label>Imię i nazwisko</label>
+        <input #nameInput type="text" formControlName="name" />
+      </div>
+
+      <div class="form-group" [class.error]="hasError('phone')">
+        <label>Numer telefonu</label>
+        <input #phoneInput type="text" formControlName="phone" />
+      </div>
+
+      <div class="form-group" [class.error]="hasError('email')">
+        <label>Adres email</label>
+        <input #emailInput type="text" formControlName="email" />
+      </div>
+    </div>
+    <div class="form-group text-area" [class.error]="hasError('message')">
+      <label>Treść wiadomości</label>
+      <textarea #messageInput formControlName="message"></textarea>
+    </div>
+  </form>
+
+  <div class="row align-end">
+    <div class="message-box" [class.error]="error" [class.success]="success" *ngIf="error || success">
+      {{ alertMessage }}
+    </div>
+    <button (click)="submitForm()">Wyślij</button>
+  </div>
+</div>

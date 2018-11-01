@@ -1,0 +1,27 @@
+<div class="page-container" [class.opened]="opened">
+  <div class="brand-container">
+
+    <button class="burger-button" (click)="toggleMenu()">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+  <div class="menu-list" (click)="toggleMenu()">
+    <div class="menu-button" routerLink="/">
+      <span>Tympanometria</span>
+      <div class="dropdown">
+        <ul>
+          <li (click)="scrollTo('czymJest')"><span>Czym jest tympanometria?</span></li>
+          <li (click)="scrollTo('zastosowanie')"><span>Co można zdiagnozować?</span></li>
+          <li (click)="scrollTo('wskazania')"><span>Wskazania do badania</span></li>
+          <li (click)="scrollTo('dlaKogo')"><span>Dla kogo?</span></li>
+          <li (click)="scrollTo('przygotowanie')"><span>Przygotowanie do badania</span></li>
+          <li (click)="scrollTo('przebieg')"><span>Przebieg badania</span></li>
+          <li (click)="scrollTo('przeciwwskazania')"><span>Przeciwwskazania</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="menu-button" (click)="scrollTo('oferta')">Oferta</div>
+    <div class="menu-button" (click)="scrollTo('sprzet')">Sprzęt</div>
+    <div (click)="scrollTo('contact')" class="menu-button">Kontakt</div>
+  </div>
+</div>

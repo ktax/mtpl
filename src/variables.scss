@@ -1,0 +1,15 @@
+$page-content-width: 1170px;
+$mobile-breakpoint: 600px;
+
+$mobile-page-content-width: calc(100% - 30px) !important;
+$mobile-margin: 15px;
+
+.page-container {
+  box-sizing: border-box;
+}
+@media screen and (max-width: 1200px) {
+  .page-container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}

@@ -1,0 +1,6 @@
+<div class="wrapper" [ngStyle]="{'background-image': 'url('+backgroundImage+')'}">
+  <h2 *ngIf="title">{{title}}</h2>
+  <div class="page-container">
+    <ng-content></ng-content>
+  </div>
+</div>

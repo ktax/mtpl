@@ -1,0 +1,175 @@
+@import '../../../variables.scss';
+
+:host(app-menu) {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-content: flex-end;
+  background-color: rgba(255, 255, 255, 0.9);
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  z-index: 999;
+
+  .page-container {
+    width: 100%;
+    max-width: $page-content-width;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    align-content: flex-end;
+  }
+
+  .brand-container {
+    display: flex;
+    flex-direction: row;
+    flex: 1 1 50%;
+    max-width: 50%;
+
+    .burger-button {
+      display: none;
+    }
+  }
+  .menu-list {
+    display: flex;
+    flex-direction: row;
+    flex: 1 1 50%;
+    max-width: 50%;
+    justify-content: flex-end;
+
+    .menu-button {
+      color: #2d2d2d;
+      padding: 10px 19px 10px 18px;
+      display: block;
+      line-height: 20px;
+      font-size: 14px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.4s ease;
+      position: relative;
+
+      &:hover {
+        // background-color: rgb(242, 242, 242);
+
+        & > span {
+          color: #d5402b;
+        }
+
+        .dropdown {
+          height: 300px;
+        }
+      }
+
+      &:active,
+      &:focus {
+        outline: none;
+      }
+
+      .dropdown {
+        position: absolute;
+        top: 50px;
+        left: 0;
+        height: 0;
+        overflow: hidden;
+        transition: height 400ms ease;
+
+        ul {
+          margin: 0;
+          list-style: none;
+          padding-left: 0;
+          width: 240px;
+          background-color: rgba(255, 255, 255, 0.9);
+
+          li {
+            padding: 10px 19px 10px 18px;
+
+            &:hover {
+              span {
+                color: #d5402b;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $mobile-breakpoint) {
+  :host(app-menu) {
+    .page-container {
+      display: block;
+      height: 40px;
+      overflow: hidden;
+      transition: height 400ms ease-in;
+      &.opened {
+        height: 600px;
+        max-height: 80vh;
+        overflow-y: scroll;
+      }
+    }
+
+    .brand-container {
+      display: block;
+      overflow: auto;
+      max-width: none;
+      padding: 0 $mobile-margin;
+      .burger-button {
+        display: block;
+        background-color: transparent;
+        font-size: 30px;
+        color: #787379;
+        float: right;
+      }
+    }
+    .menu-list {
+      display: block;
+
+      .menu-button {
+        width: 100%;
+
+        &:focus,
+        &:active,
+        &:hover {
+          outline: none !important;
+          border: none !important;
+          box-shadow: none !important;
+
+          .dropdown {
+            height: auto;
+          }
+        }
+
+        .dropdown {
+          position: static;
+          display: block;
+          // top: 50px;
+          // left: 0;
+          height: auto;
+          overflow: auto;
+          // transition: height 400ms ease;
+
+          ul {
+            margin: 0;
+            list-style: none;
+            padding-left: 0;
+            width: 100%;
+            background-color: transparent;
+
+            li {
+              padding: 10px 19px 10px 18px;
+
+              &:hover {
+                span {
+                  color: #d5402b;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
