@@ -48,7 +48,7 @@ export class ContactFormComponent implements OnInit {
       .append('message', this.form.value.message);
 
     this.http
-      .post('/', body.toString(), {
+      .post('https://mobilna-tympanometria.netlify.com/', body.toString(), {
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       })
       .subscribe((res) => {
