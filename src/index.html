@@ -13,10 +13,38 @@
     crossorigin="anonymous">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-79520392-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-79520392-2');
+  </script>
+  <!-- Hotjar Tracking Code for http://mobilna-tympanometria.pl -->
+  <script>
+    (function (h, o, t, j, a, r) {
+      h.hj = h.hj || function () { (h.hj.q = h.hj.q || []).push(arguments) };
+      h._hjSettings = { hjid: 1080914, hjsv: 6 };
+      a = o.getElementsByTagName('head')[0];
+      r = o.createElement('script'); r.async = 1;
+      r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+      a.appendChild(r);
+    })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
+  </script>
 </head>
 
 <body>
   <app-root></app-root>
+
+  <form name=”contact” netlify netlify-honeypot=”bot-field” hidden>
+    <input type=”text” name=”name” />
+    <input type=text name=phone />
+    <input type=”email” name=”email” />
+    <textarea name=”message”></textarea>
+  </form>
 </body>
 
 </html>

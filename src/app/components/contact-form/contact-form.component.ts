@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { HttpParams, HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-contact-form',
@@ -13,7 +14,7 @@ export class ContactFormComponent implements OnInit {
   alertMessage: string;
   forceValid: boolean;
 
-  constructor() {
+  constructor(private http: HttpClient) {
     this.form = this.createForm();
   }
 
@@ -38,12 +39,29 @@ export class ContactFormComponent implements OnInit {
         'Prosze uzupełnić wymagane pola i spróbować ponownie.';
       return;
     }
+
+    const body = new HttpParams()
+      .set('form-name', 'contact')
+      .append('name', this.form.value.name)
+      .append('phone', this.form.value.phone)
+      .append('email', this.form.value.email)
+      .append('message', this.form.value.message);
+
+    this.http
+      .post('/', body.toString(), {
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      })
+      .subscribe((res) => {
+        this.form.reset();
+        this.success = true;
+      });
   }
 
   resetErrors() {
     this.forceValid = false;
     this.error = false;
     this.alertMessage = '';
+    this.success = false;
   }
 
   hasError(controlName: string) {
