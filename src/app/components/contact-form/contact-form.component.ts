@@ -41,7 +41,7 @@ export class ContactFormComponent implements OnInit {
     }
 
     const body = new HttpParams()
-      .set('form-name', 'contact')
+      .set('form-name', '"contact"')
       .append('name', this.form.value.name)
       .append('phone', this.form.value.phone)
       .append('email', this.form.value.email)
@@ -49,7 +49,11 @@ export class ContactFormComponent implements OnInit {
 
     this.http
       .post('/', body.toString(), {
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+          accept:
+            'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+        },
       })
       .subscribe((res) => {
         this.form.reset();
