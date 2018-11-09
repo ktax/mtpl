@@ -24,7 +24,6 @@ export class ContactFormComponent implements OnInit {
       phone: new FormControl('', [Validators.required]),
       email: new FormControl('', [Validators.required, Validators.email]),
       message: new FormControl(''),
-      'form-name': new FormControl(''),
     });
 
     return form;
@@ -42,7 +41,7 @@ export class ContactFormComponent implements OnInit {
     }
 
     const body = new HttpParams()
-      .append('form-name', 'contact')
+      .set('form-name', 'contact')
       .append('name', this.form.value.name)
       .append('phone', this.form.value.phone)
       .append('email', this.form.value.email)
