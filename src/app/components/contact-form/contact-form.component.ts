@@ -59,6 +59,8 @@ export class ContactFormComponent implements OnInit {
       })
       .subscribe((res) => {
         this.form.reset();
+        this.alertMessage =
+          'Dziękujemy za wiadomość. Skontaktujemy się z Państwem.';
         this.success = true;
       });
   }
