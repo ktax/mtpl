@@ -42,7 +42,6 @@ export class ContactFormComponent implements OnInit {
     }
 
     const body = new HttpParams()
-      .set('form-name', '"contact"')
       .append('name', this.form.value.name)
       .append('phone', this.form.value.phone)
       .append('email', this.form.value.email)
