@@ -24,6 +24,7 @@ export class ContactFormComponent implements OnInit {
       phone: new FormControl('', [Validators.required]),
       email: new FormControl('', [Validators.required, Validators.email]),
       message: new FormControl(''),
+      'form-name': new FormControl(''),
     });
 
     return form;

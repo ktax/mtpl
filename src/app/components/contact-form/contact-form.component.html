@@ -24,7 +24,12 @@
     </p>
   </div>
   <form name="contact" netlify [formGroup]="form">
-    <input type="hidden" name="form-name" value="contact" />
+    <input
+      type="hidden"
+      formControlName="form-name"
+      name="form-name"
+      value="contact"
+    />
     <div class="row">
       <div class="form-group" [class.error]="hasError('name')">
         <label>Imię i nazwisko</label>
